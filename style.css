@@ -1,0 +1,646 @@
+/*
+Theme Name: cyb
+Theme URI: http://www.cybstudio.com
+Author: Umberto De Palma
+Author URI: https://www.cybstudio.com/contact
+Description: Custom Theme - single page - with  Bootstrap 4
+Version: 1,0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, full-width-template, grid-layout, custom-header, custom-logo, custom-menu, editor-style, featured-images, sticky-post, portfolio, translation-ready
+Text Domain: cyb
+Tested up to: 5.7.2
+Requires PHP: 7.3
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+.admin-bar #navbar{
+    top:32px;
+}
+
+body{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body.home{
+  padding-top:0;
+}
+
+.main-content{
+  flex:1;
+}
+h1,h2,h3,h4,h5{
+font-family: 'Montserrat', sans-serif;
+color: #555555;
+}
+/* Buttons
+-------------------------------------------------------- */
+.btn{
+    font-family: Montserrat, sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: rgb(46, 46, 46);
+    line-height: 51px;
+    height: 51px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-width:2px;
+    margin: 0px 26px 0px 0px;
+    width: auto;
+    padding: 0px 42px;
+    border-radius:0px;
+}
+.btn-outline-light{
+    color:rgb(255, 255, 255);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+.btn:hover{
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+/* Navbar
+-------------------------------------------------------- */
+.navbar{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    font-family: 'Montserrat', sans-serif;
+    font-size:16px;
+    font-weight: 700;
+    letter-spacing: -.3px;
+    transition: top 0.3s;
+}
+.navbar-brand{
+    font-size:34px;
+    -webkit-transition: color 0.3s; /* Safari prior 6.1 */
+}
+
+#navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    background:#454545!important;
+}
+.home #navbar{
+    background:transparent!important;
+}
+#navbar-scroll{
+    background-color: #fff!important;
+    top: -130px;
+    border-bottom:1px solid #ddd;
+}
+#navbar-scroll .navbar-brand{
+    color:#e50000;
+}
+#navbar-scroll .navbar-nav li a{
+  color:#949494;
+}
+#navbar-scroll .navbar-nav .nav-link.active{
+  color:#555555;
+  }
+.logo{
+    min-width: 270px;
+    max-width: 100%;
+    height: auto;
+  }
+.navbar-social a{display:inline-block; color:#fff; padding-right: 8px; font-size: 0.9rem;}
+.navbar-scroll .navbar-social a{color:#ddd}
+
+
+/* Slider
+-------------------------------------------------------- */
+.carousel,
+.carousel-inner,
+.carousel-item{min-height: 100vh;}
+
+.carousel{
+    background-size: cover; 
+    background-position: center center;
+}
+.carousel h3{
+    color:#fff;
+}
+.carousel-inner{
+    animation: colorchange 25s infinite;
+    -webkit-animation: colorchange 25s infinite;
+}
+ @keyframes colorchange
+    {
+      0% {background: rgba(40, 118, 99, 0.85);}
+      20% {background: rgba(0, 164, 162, 0.85);}
+      40% {background: rgba(8, 153, 189, 0.85);}
+      60% {background: rgba(229, 23, 222, 0.85);}
+      80% {background: rgba(255, 117, 15, 0.85);}
+      100% {background: rgba(40, 118, 99, 0.85);}
+    }
+
+    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    {
+      0% {background: rgba(40, 118, 99, 0.85);}
+      20% {background: rgba(0, 164, 162, 0.85);}
+      40% {background: rgba(8, 153, 189, 0.85);}
+      60% {background: rgba(229, 23, 222, 0.85);}
+      80% {background: rgba(255, 117, 15, 0.85);}
+      100% {background: rgba(40, 118, 99, 0.85);}
+    }
+
+.carousel-indicators li {
+    border-radius: 12px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #fff;
+    background-color: rgba(255,255,255,0);
+    cursor: pointer;
+}
+.carousel-caption{
+    text-align:left;
+    left:10%;
+    right:16%;
+    transform: translateY(-50%);
+    bottom: 0;
+    top: 50%;
+    max-width: 60vw;
+}
+.carousel-caption h3{
+    font-size: 80px;
+    line-height: 85px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+.carousel-control-next,.carousel-control-prev{
+    top:45vh;
+    opacity:1;
+    padding:20px;
+    background: #ffffff;
+    width: 50px;
+    height: 50px;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    opacity: 1; 
+}
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='000000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E" );
+}
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='000000' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+.carousel .lead{
+    font-size: 24px;
+    font-family: Georgia;
+    font-style: italic;
+    line-height: 32px;
+}
+
+
+/* Home page cards
+-------------------------------------------------------- */
+.intro-cards .card {
+    border:0;
+}
+.intro-cards .card-title{
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+.intro-cards .card-text{
+    font-family: Open Sans,sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+    color: #949494;
+}
+
+
+/* Home page grid
+-------------------------------------------------------- */
+
+.home-grid .content{
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+.home-grid .content a{
+  color:#fff;
+}
+.home-grid .content .content-overlay{
+  background: #2e2e2e;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.home-grid .content:hover .content-overlay{
+  opacity: 1;
+}
+
+.home-grid .content-image{
+  width: 100%;
+}
+
+.home-grid .content-details{
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.home-grid .content:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.home-grid .content-details p{
+  color: #c2c2c2;
+  font-size: 0.9em;
+  padding-top:10px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.home-grid .content .content-title{
+  font-size: 2.2em;
+  font-weight: 600;
+}
+.home-grid .content:hover .content-title{
+  color:#fff;
+}
+.home-grid .fadeIn-bottom{
+  top: 80%;
+}
+
+.home-grid .fadeIn-top{
+  top: 20%;
+}
+
+.home-grid .fadeIn-left{
+  left: 20%;
+}
+
+.home-grid .fadeIn-right,{
+  left: 80%;
+}
+
+
+/* Contact section
+-------------------------------------------------------- */
+.home-contact{
+    background-color: #eaeaee
+}
+.home-contact h2{
+    font-size: 2.6rem;
+    line-height: 40px;
+    font-weight: 700;
+    letter-spacing: -1.3px;
+}
+.home-contact p{
+    font-family: Open Sans,sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    color: #949494;
+}
+.wpcf7-acceptance{
+    font-size: 14px;
+}
+.home-contact a{
+    color: #949494;
+    font-weight: 600;
+}
+.wpcf7-form  label{
+    width: 100%;
+}
+.wpcf7-form .wpcf7-text{
+    width: 100%;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    outline: 0;
+    color: #999;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #fff;
+    -webkit-transition: border-color .2s ease-out;
+    -moz-transition: border-color .2s ease-out;
+    transition: border-color .2s ease-out;
+    resize: none;
+    border-color: transparent;
+    margin-bottom: 20px;
+}
+.wpcf7-form .wpcf7-textarea{
+    width: 100%;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    outline: 0;
+    color: #999;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #fff;
+    -webkit-transition: border-color .2s ease-out;
+    -moz-transition: border-color .2s ease-out;
+    transition: border-color .2s ease-out;
+    resize: none;
+    border-color: transparent;
+    margin-bottom: 20px;
+}
+input.wpcf7-form-control.wpcf7-submit {
+    background-color: #3c3c3c;
+    border: 2px solid #3c3c3c;
+    color: #fff;
+    cursor: pointer;
+    outline: 0;
+    padding: 12px 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    border-radius: 3em;
+}
+input.wpcf7-form-control.wpcf7-submit:hover {
+    background-color: #000;
+    border-color: #000;
+}
+.wpcf7-form .container.myform{
+    max-width: 1300px;
+}
+.wpcf7-validation-errors, .wpcf7-acceptance-missing {
+    border: 2px solid #e50000;
+}
+.grecaptcha-badge {
+    visibility: collapse !important;  
+}
+
+
+
+/* Portfolio page
+-------------------------------------------------------- */
+.page-template-page-portfolio #smoothBody{
+  background-color: #c1edc3;
+}
+
+/* Footer
+-------------------------------------------------------- */
+footer{
+  font-size: 0.8rem;
+  color:#ddd;
+}
+footer a{
+  color: #ddd;
+}
+
+
+/*   404 page  */
+.error404 .navbar-social{display:none;}
+
+/* Comments
+-------------------------------------------------------- */
+#comments{margin-bottom: 40px;}
+.comments{padding-top: 40px;}
+.comments textarea{width: 100%;}
+.comments label{ min-width: 80px;}
+.comments ul,
+.comments ol{list-style-type: none;}
+.comment-author img{border-radius: 999px; width:50px;}
+.comment .reply{border-bottom:  1px solid #ccc; margin-bottom: 30px;padding-bottom: 10px;}
+
+
+/* Input & textarea
+-------------------------------------------------------- */
+input,
+textarea{padding: 5px 10px; border: 1px solid #ccc}
+
+
+/* Widgets
+-------------------------------------------------------- */
+.widget_search .screen-reader-text{display: block;}
+.widget_search #s{width:70%;float:left;}
+.widget_search #searchsubmit{width:30%;float:left;background: #fff;}
+
+
+/* pagination
+-------------------------------------------------------- */
+.pagination{margin-bottom:40px}
+.page-numbers{display: inline-block;padding: 10px 15px;border: 1px solid #ddd;margin-right:4px;}
+
+
+/* Responsive hacks
+-------------------------------------------------------- */
+/* tablet
+-------------------------------------------------------- */
+@media (max-width:998px){
+  .navbar-social{ flex-direction: row; }
+  .logo{
+    max-width: 270px;
+    }
+  .navbar-brand {
+    width: 70%;
+  }
+  .navbar .nav-link{
+    padding: .1rem 0;
+  }
+  .navbar-collapse{
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+  .navbar-main .navbar-social a{
+    color:rgba(255,255,255,.5);
+  }
+  .navbar-main .navbar-social a:hover{
+    color:rgba(255,255,255,1);
+  }
+  .carousel-caption h3{
+    font-size: 66px;
+    line-height: 74px;
+    padding-bottom: 30px
+  }
+ .carousel-control-prev,.carousel-control-next{
+    display:none;
+  }
+}
+
+/* Smartphone
+-------------------------------------------------------- */
+@media (max-width:767px){
+  #wpadminbar {
+        position: fixed;
+  }
+  .logo{
+    min-width: 50px;
+    max-width: 100%;
+  }
+  .navbar-brand {
+    max-width: 230px;
+    margin-right: 0;
+  }
+  .navbar-collapse{
+    background-color: #fff;
+  }
+  .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link, .navbar-main .navbar-social a {
+    color: #6c6c6c;
+  }
+  .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: #6c6c6c;
+}
+  .navbar .nav-link, .navbar .navbar-social {
+    padding: .1rem 1rem;
+}
+  .navbar-dark .navbar-nav .nav-link{
+    color: #6c6c6c;
+  }
+  .carousel-caption{
+    left: 7%;
+    right: 10%;
+    max-width: 80vw;
+  }
+  .carousel-caption h3{
+    font-size: 38px;
+    line-height: 40px;
+    padding-bottom: 24px;
+  }
+  .carousel .btn{
+    padding: 0px 20px;
+    margin-right:5px;
+    line-height: 40px;
+    height: 42px;
+  }
+}
+
+/* general wordpress style
+-------------------------------------------------------- */
+.post img{max-width: 100%; height:auto;}
+
+
+/* WordPress Core Styles
+-------------------------------------------------------------- */
+ .gallery-caption{padding:5px; font-size: 10px;}
+ .bypostauthor{border-left: 3px solid #ddd;padding-left: 20px;}
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+        white-space: nowrap;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
